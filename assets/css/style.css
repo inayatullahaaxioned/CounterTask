@@ -103,47 +103,382 @@ li {
   width: 86%; 
   margin: 0 auto;
 }
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+:root {
+  --white-clr:                  #fff;
+  --primary-clr:                #5ac0ab;
+  --secondary-clr:              #5a6f80;
+  --section-bg-clr:             #f0f8ff;
+  --footer-bg-clr:              #44525d;
+  --dark-clr:                   #000;
+  --p-clr:                      #717275;
+  --border-clr:                 #e9eaeb;
+}
+
+/* common styling  */
+.heading {
+  color: var(--secondary-clr);
+  font-size: 44px;
+  font-weight: 700;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.banner { padding: 0; }
 /*=================================
   Header styling starts here
 =================================*/
+.header { background-color: var(--primary-clr); }
 
+.header .wrapper {
+  padding: 15px 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 
+.contact-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 17px;
+}
 
+.before-icon {
+  display: inline-block;
+  color: var(--white-clr);
+  font-size: 15px;
+}
 
+.before-icon::before {
+  content: "\f3c5";
+  margin:2px 8px 0;
+  font-size: 15px;
+  font-family: "FontAwesome";
+  float: left;
+}
 
+.envelope::before { content: "\f0e0"; }
 
+.social-icon {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+.social-icon::before {
+  content: "\f099";
+  margin-right: 15px;
+  color: var(--white-clr);
+  font-family: "FontAwesome";
+  text-indent: 0;
+  float: left;
+}
+
+.facebook::before { content: "\f09a"; }
+.instagram::before { content: "\f16d"; }
+.youtube::before { content: "\f16a"; }
+.whatsapp::before { content: "\f232"; }
 /*=================================
   Header styling ends here
 =================================*/  
-
 /*=================================
-  main styling starts here
-=================================*/
+  Nav styling starts here
+=================================*/  
+.nav .wrapper {
+  padding: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 
+.hamburger { display: none; }
 
+.bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  display: block;
+  background-color: #000;
+  text-indent: -9999px;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
 
+.logo img {
+  width: 80px;
+  height: auto;
+}
 
+.drop-list { position: relative; }
 
+.drop-item {
+  width: 135px;
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 75%;
+  background: var(--white-clr);
+}
 
+.drop-item li { margin: 10px 0; }
 
+.drop-item li a {
+  padding: 4% 0 4% 21px;
+  display: inline-block;
+}
 
+.nav-item {
+  padding: 20px;
+  color: #717275;
+  font-size: 16px;
+}
+
+.nav-item.active { color: var(--primary-clr); }
+
+.donate-btn {
+  padding: 12px 28px;
+  margin-left: 20px;
+  border: 2px solid #596E7F;
+  border-radius: 30px;
+}
+
+.dropdown { display: inline-block; }
+
+.dropdown::before {
+  content: "\f107";
+  padding-left: 5px;
+  font-size: 15px;
+  font-family: "FontAwesome";
+  float: right;
+}
+
+.logo-name {
+  display: inherit;
+  vertical-align: middle;
+  color: var(--primary-clr);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+small {
+  display: block;
+  color: var(--secondary-clr);
+  font-size: 10.5px;
+  text-transform: uppercase;
+}
+
+.drop-list:hover .drop-item { display: block; }
 /*=================================
-  main styling ends here
-=================================*/
-
+  Nav styling ends here
+=================================*/  
 /*=================================
-  footer styling starts here
+  Banner styling starts here
+=================================*/  
+.banner .wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.slide-control {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.angle {
+  padding: 0 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-indent: -9999px;
+  position: relative;
+}
+
+.angle::before {
+  content: "\f104";
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--secondary-clr);
+  color: var(--white-clr);
+  font-size: 30px;
+  font-family: "FontAwesome";
+  font-weight: lighter;
+  text-indent: 0;
+  float: left;
+  opacity: 0.8;
+}
+
+.next-slide::before { content: "\f105"; }
+.banner-item { position: relative; }
+.banner-item:not(:first-child) { display: none; }
+
+.banner-item figure {
+  height: 100%;
+  max-height: 680px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 23%, 49% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 23%, 49% 100%, 0 100%);
+}
+
+.banner-content {
+  min-width: 680px;
+  min-height: 680px;
+  height: 100%;
+  padding: 100px 7.4% 70px ;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.banner-content h2 {
+  margin-bottom: 8px;
+  color: var(--secondary-clr); 
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.banner-content p {
+  margin-top: 17px;
+  color: #717275;
+  font-size: 16px;
+}
+/*=================================
+  Banner styling ends here
 =================================*/ 
-
-
-
-
-
-
-
- /*=================================
-  footer styling ends here
+/*=================================
+  Charity feature styling starts here
 =================================*/ 
+.charity .heading {
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.feature-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+.feature-list li {
+  padding: 30px 27px;
+  border-radius: 20px;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  text-align: center;
+}
+
+.feature-list li:hover {
+  -webkit-box-shadow: 0 16px 48px rgba(0,0,0,.175);
+          box-shadow: 0 16px 48px rgba(0,0,0,.175);
+  -webkit-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  transition: all .4s ease-in;
+}
+
+.feature-list li:hover .feature-img {
+  -webkit-transform: scale(.75);
+      -ms-transform: scale(.75);
+          transform: scale(.75);
+  -webkit-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  transition: all .4s ease-in;
+}
+
+.feature-list img {
+  max-width: 128px;
+  max-height: 128px;
+}
+
+.charity-heading {
+  padding: 20px 0 16px;
+  color: var(--primary-clr);
+  font-size: 24px;
+}
+
+.bold { font-weight: 700; }
+/*=================================
+  Charity feature styling ends here
+=================================*/ 
+.counter-section {
+  padding: 50px 0;
+  background-color: var(--section-bg-clr);
+}
+
+.list {
+  display: flex;
+  background-color: var(--primary-clr);
+}
+
+.list-item {
+  flex-basis: 25%;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: var(--white-clr);
+}
 
 /*media query starts*/
 /*media query for 995px starts here*/
